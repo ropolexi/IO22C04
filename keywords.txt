@@ -1,0 +1,4 @@
+IO22C04	KEYWORD1
+gpio_init	KEYWORD2
+display_update	KEYWORD2
+set_value	KEYWORD2
