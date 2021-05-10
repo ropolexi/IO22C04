@@ -1,4 +1,7 @@
 # 4 Channel Pro mini PLC Board (IO22C04)
+
+![Controller](IO22C04.jpeg)
+
 This arduino library is for IO22C04 board with either
 
 - ATmega32u4 (pro micro)
@@ -10,7 +13,7 @@ TimerOne Library
 
 https://github.com/PaulStoffregen/TimerOne
 
-## Pin Map of the controller
+## Pin map of the controller
 ### Relay outputs
 ```
 #define RELAY1_PIN 10
