@@ -1,0 +1,16 @@
+{
+  "name": "IO22C04",
+  "keywords": "IO22C04",
+  "description": "Allow to use the IO22C04 controller board",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/ropolexi/IO22C04.git"
+  },
+  "frameworks": "arduino",
+  "platforms":
+  [
+    "atmelavr",
+    "leonardo"
+  ]
+}
