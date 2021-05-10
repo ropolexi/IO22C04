@@ -1,4 +1,4 @@
-# IO22C04
+# 4 Channel Pro mini PLC Board (IO22C04)
 This arduino library is for IO22C04 board with either
 
 - ATmega32u4 (pro micro)
