@@ -1,11 +1,10 @@
 # IO22C04
-This arduino library is for IO22C04 board
+This arduino library is for IO22C04 board with either
 
-## Microcontroller
-ATmega32u4 (pro micro)
-ATmega328 (pro mini)
+- ATmega32u4 (pro micro)
+- ATmega328 (pro mini)
 
-## Dependancies
+## Dependencies
 
 TimerOne Library
 
