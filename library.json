@@ -1,5 +1,6 @@
 {
   "name": "IO22C04",
+  "version":"1.0.1",
   "keywords": "IO22C04",
   "description": "Allow to use the IO22C04 controller board",
   "repository":
