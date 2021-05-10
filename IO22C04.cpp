@@ -36,7 +36,7 @@ void IO22C04::displayOneBit()
     digitalWrite(LATCH_PIN, HIGH);
 }
 
-void IO22C04::update()
+void IO22C04::display_update()
 {
     int temp_val = display_value;
     (com_num < 3) ? com_num++ : com_num = 0;

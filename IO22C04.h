@@ -45,7 +45,7 @@ private:
 public:
   IO22C04();
   void gpio_init();
-  void update();
+  void display_update();
   void set_value(int value);
   
 };

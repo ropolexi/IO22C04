@@ -2,14 +2,14 @@
 #include "IO22C04.h"
 #include <TimerOne.h>
 
-IO22C04 display;
+IO22C04 controller;
 
 int counter = 0;
 unsigned long counter_timer = 0;
 
 void update_display()
 {
-  display.update();
+  controller.display_update();
 }
 
 void setup()
@@ -17,7 +17,7 @@ void setup()
   // put your setup code here, to run once:
   Timer1.initialize(6000);
   Timer1.attachInterrupt(update_display);
-  display.gpio_init();
+  controller.gpio_init();
 }
 
 void loop()
@@ -25,7 +25,7 @@ void loop()
 
   if (millis() - counter_timer >= 1000)
   {
-    display.set_value(counter);
+    controller.set_value(counter);
     counter++;
 
     Serial.print("IN_1:");
