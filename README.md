@@ -10,8 +10,8 @@ TimerOne Library
 
 https://github.com/PaulStoffregen/TimerOne
 
-
-## Relay outputs
+## Pin Map of the controller
+### Relay outputs
 ```
 #define RELAY1_PIN 10
 #define RELAY4_PIN 6
@@ -24,7 +24,7 @@ https://github.com/PaulStoffregen/TimerOne
 #endif
 ```
 
-## Input Terminals
+### Input Terminals
 ```
 #define IN_1_PIN A1
 #define IN_2_PIN A0
@@ -32,7 +32,7 @@ https://github.com/PaulStoffregen/TimerOne
 #define IN_4_PIN A2
 ```
 
-## Switches
+### Switches
 ```
 #define SW1_PIN 2
 #define SW2_PIN 3
@@ -40,7 +40,7 @@ https://github.com/PaulStoffregen/TimerOne
 #define SW4_PIN 5
 ```
 
-## seven segment display pins
+### seven segment display pins
 ```
 #define LATCH_PIN 8
 #define CLOCK_PIN 9
