@@ -40,6 +40,7 @@ private:
   unsigned char dat;
   unsigned char com_num;
   int display_value;
+  int display_value_pre;
   void displayOneBit();
 
 public:
