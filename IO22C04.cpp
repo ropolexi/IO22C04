@@ -2,27 +2,27 @@
 
 IO22C04::IO22C04()
 {
-    
 }
 
-void IO22C04::gpio_init(){
-    pinMode(DATA_PIN,OUTPUT);
-    pinMode(LATCH_PIN,OUTPUT);
-    pinMode(CLOCK_PIN,OUTPUT);
-    pinMode(RELAY1_PIN,OUTPUT);
-    pinMode(RELAY2_PIN,OUTPUT);
-    pinMode(RELAY3_PIN,OUTPUT);
-    pinMode(RELAY4_PIN,OUTPUT);
+void IO22C04::gpio_init()
+{
+    pinMode(DATA_PIN, OUTPUT);
+    pinMode(LATCH_PIN, OUTPUT);
+    pinMode(CLOCK_PIN, OUTPUT);
+    pinMode(RELAY1_PIN, OUTPUT);
+    pinMode(RELAY2_PIN, OUTPUT);
+    pinMode(RELAY3_PIN, OUTPUT);
+    pinMode(RELAY4_PIN, OUTPUT);
 
-    pinMode(IN_1_PIN,INPUT_PULLUP);
-    pinMode(IN_2_PIN,INPUT_PULLUP);
-    pinMode(IN_3_PIN,INPUT_PULLUP);
-    pinMode(IN_4_PIN,INPUT_PULLUP);
+    pinMode(IN_1_PIN, INPUT_PULLUP);
+    pinMode(IN_2_PIN, INPUT_PULLUP);
+    pinMode(IN_3_PIN, INPUT_PULLUP);
+    pinMode(IN_4_PIN, INPUT_PULLUP);
 
-    pinMode(SW1_PIN,INPUT_PULLUP);
-    pinMode(SW2_PIN,INPUT_PULLUP);
-    pinMode(SW3_PIN,INPUT_PULLUP);
-    pinMode(SW4_PIN,INPUT_PULLUP);
+    pinMode(SW1_PIN, INPUT_PULLUP);
+    pinMode(SW2_PIN, INPUT_PULLUP);
+    pinMode(SW3_PIN, INPUT_PULLUP);
+    pinMode(SW4_PIN, INPUT_PULLUP);
 }
 void IO22C04::displayOneBit()
 {
@@ -38,19 +38,32 @@ void IO22C04::displayOneBit()
 
 void IO22C04::display_update()
 {
-    int temp_val = display_value;
-    (com_num < 3) ? com_num++ : com_num = 0;
+    if (com_num < 3)
+    {
+        com_num++;
+    }
+    else
+    {
+        if (display_value_pre != display_value)
+        {
+            int temp_val = display_value;
+
+            display_value_pre = display_value;
+            dat_buf[0] = temp_val / 1000;
+            temp_val = temp_val % 1000;
+            dat_buf[1] = temp_val / 100;
+            temp_val = temp_val % 100;
+            dat_buf[2] = temp_val / 10;
+            dat_buf[3] = temp_val % 10;
+        }
+
+        com_num = 0;
+    }
     dat = dat_buf[com_num];
     displayOneBit();
-    dat_buf[0] = temp_val / 1000;
-    temp_val = temp_val % 1000;
-    dat_buf[1] = temp_val / 100;
-    temp_val = temp_val % 100;
-    dat_buf[2] = temp_val / 10;
-    dat_buf[3] = temp_val % 10;
 }
 
-
-void IO22C04::set_value(int value){
+void IO22C04::set_value(int value)
+{
     display_value = value;
 }
