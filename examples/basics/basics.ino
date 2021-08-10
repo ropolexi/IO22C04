@@ -27,7 +27,7 @@ void update_display()
 void setup()
 {
   // put your setup code here, to run once:
-  Timer1.initialize(6000);
+  Timer1.initialize(5000);
   Timer1.attachInterrupt(update_display);
   Serial.begin(9600);
   
